@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+
 int main()
 {
     char str1[20];
@@ -10,10 +11,9 @@ int main()
     printf("Ingrese el segundo string de hasta 20 carácteres:\n");
     scanf("%s", str2);
     if (strcmp(str1, str2) == 0){
-        printf("0");
+        printf("\n0 Los string coinciden");
     }
     else{
-        printf("1");
-        
+        printf("\n1 Los string no coinciden");
     }
 }

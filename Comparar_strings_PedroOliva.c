@@ -10,10 +10,10 @@ int main()
     printf("Ingrese el segundo string de hasta 20 carácteres:\n");
     scanf("%s", str2);
     if (strcmp(str1, str2) == 0){
-        printf("1");
-    }
-    else{
         printf("0");
     }
-  }
+    else{
+        printf("1");
+        
+    }
 }

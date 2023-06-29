@@ -1,12 +1,13 @@
 #include <stdio.h>
+#define numSTR 20
 int compSTR(char*, char*);
 
 int main()
 {
-    char str1[14];
-    char str2[14];
-    str1[13] = 0;
-    str2[13] = 0;
+    char str1[numSTR];
+    char str2[numSTR];
+    str1[19] = 0;
+    str2[19] = 0;
     char* pstr1=str1;
     char* pstr2=str2;
     printf("Bienvenido al programa que compara strings");
@@ -23,14 +24,10 @@ int main()
 
 int compSTR(char *pstr1,char *pstr2){
     int flag = 0;
-    for(int i=0; i<=13; i++){
-        if (*(pstr1+i) == *(pstr2+i)){
-        flag=0;
-        }else{
-            flag=1;
-            break;
-        }
+    for(int i=0; i<=numSTR-1; i++){
+        if (*(pstr1+i) != *(pstr2+i)){
+          return 1;
+        }    
     }
-    if (flag == 1) return 1;
-    else return 0;
+    return 0;
 }

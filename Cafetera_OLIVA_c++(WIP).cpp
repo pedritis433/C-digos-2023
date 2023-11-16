@@ -5,28 +5,51 @@ class Cafetera {
     private:
         int _cantidadMaxima, _cantidadActual;
     public:
-        void Lee(int &a2, int &b2);
-        void Guarda(int a2, int b2) {
-            _cantidadActual = a2;
-            _cantidadMaxima = b2;
+        Cafetera (void){
+            _cantidadMaxima=1000;
         }
+        void Lee(int &vActual, int &vMax);
+        void Guarda(int vActual);
+        
 };
-void Cafetera::Lee(int &a2, int &b2) {
-    a2 = _cantidadMaxima;
-    b2 = _cantidadActual;
+void Cafetera::Guarda(int vActual){
+    _cantidadActual = vActual;
+}
+void Cafetera::Lee(int &vActual, int &vMax) {
+    vActual = _cantidadActual;
+    vMax = _cantidadMaxima;
 }
 
 int main()
 {
-    int accion;
-    cout << "Bienvenido al programa que permite controlar una cafetera" << endl << "Ingrese el numero que corresponda a la acción que desea realizar" << endl << endl;
-    cout << " -Revisar contenido en la cafetera: 1" << endl << " -Llenar cafetera: 2"<< endl << " -Vaciar cafetera: 3" << endl << " -Agregar café: 4" << endl << " -Servir taza: 5" << endl;
-    cin >> accion;
-    Cafetera par1;
-    int x, y;
-    par1.Guarda(12, 32);
-    par1.Lee(x, y);
-    cout << "Valor de par1.a: " << x << endl;
-    cout << "Valor de par1.b: " << y << endl;
+    Cafetera liquido;
+    liquido.Guarda(0);
+    int again=1;
+        do{
+        cout << "Bienvenido al programa que permite controlar una cafetera" << endl 
+        << "Ingrese el numero que corresponda a la acción que desea realizar" << endl << endl;
+        cout << " -Revisar contenido en la cafetera: 1" << endl << 
+        " -Llenar cafetera: 2"<< endl << " -Vaciar cafetera: 3" << endl 
+        << " -Agregar café: 4" << endl << " -Servir taza: 5" << endl;
+        int accion;
+        cin >> accion;
+        switch (accion) {
+            case 1:
+                int actual, max;
+                liquido.Lee(actual, max);
+                cout << "Valor de liquido.max: " << max << "cc" << endl;
+                cout << "Valor de liquido.actual: " << actual << "cc" << endl << endl;
+                break;
+            case 2:
+                liquido.Guarda(1000);
+                break;
+            case 3:
+                liquido.Guarda(0);
+                break;
+        }
+        cout << "Ingrese 1 si quiere realizar otro comando" << endl;
+        cin >> again;
+    }
+    while(again==1);
     return 0;
 }

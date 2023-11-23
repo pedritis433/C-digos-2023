@@ -1,25 +1,28 @@
+/* Este código requiere de un circuito simulado para poder verificar su funcionamiento,
+la simulación en cuestión es esta: https://www.tinkercad.com/things/beAsLDZc6aC-mefpedrooliva */
+
 #define button 10
 #define RETARDO 40
 #define LED_UP 9
 #define LED_DOWN 8
 int cuenta=0;
 const byte numero[16]={
-  B01000001,
-  B11110011,
-  B10001001,
-  B10100001,
-  B00110011,
-  B00100101,
-  B00000101,
-  B11110001,
-  B00000001,
-  B00100001,
-  B00010001,
-  B00000111,
-  B10001111,
-  B10000011,
-  B00001101,
-  B00011101};
+  B10000001,//0
+  B11110011,//1
+  B01001001,//2
+  B01100001,//3
+  B00110011,//4
+  B00100101,//5
+  B00000101,//6
+  B11110001,//7
+  B00000001,//8
+  B00100001,//9
+  B00010001,//A
+  B00000111,//b
+  B01001111,//C
+  B01000011,//d
+  B00001101,//E
+  B00011101};//F
 
 
 void debounceFSM_init(void);
